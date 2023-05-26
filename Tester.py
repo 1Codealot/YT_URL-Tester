@@ -39,11 +39,12 @@ def Test():
         else:
             with lock:
                 attempts += 1
-                print(attempts, "Attempts", end='\r')
+                print(attempts, "Attempts. Time since starting", datetime.datetime.now()-s, end='\r')
 
 # Create and start multiple threads
-num_threads = int(input("Type in the thread amount: "))
-print(datetime.datetime.now(),"\n")
+num_threads = int(input("Type in the thread amount (Recccomended is 15)\n "))
+s = datetime.datetime.now()
+print(s)
 threads = []
 
 for _ in range(num_threads):
