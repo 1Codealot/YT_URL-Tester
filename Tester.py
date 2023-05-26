@@ -5,12 +5,12 @@ import datetime
 import os
 
 # Load the shared library
-try:
-    lib = ctypes.CDLL("./URL_Creator.so")
-except:
-    path = os.getcwd()
-    path += "\\URL_Creator"
-    lib = ctypes.CDLL(path)
+# try:
+lib = ctypes.CDLL("URL_Creator.so")
+# except:
+#     path = os.getcwd()
+#     path += "\\URL_Creator"
+#     lib = ctypes.CDLL(path)
 
 
 # Define the function signature
@@ -42,7 +42,7 @@ def Test():
                 print(attempts, "Attempts. Time since starting", datetime.datetime.now()-s, end='\r')
 
 # Create and start multiple threads
-num_threads = int(input("Type in the thread amount (Recccomended is 15)\n "))
+num_threads = int(input("Type in the thread amount (Recccomended is 15)\n"))
 s = datetime.datetime.now()
 print(s)
 threads = []
